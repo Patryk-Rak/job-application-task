@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block title %}
-{{ product.name }}
+{{ offer.title }}
 {% endblock %}
 
 {% block content %}
 <div class="product-detail">
     <img src="{% if offer.image %}{{ offer.image.url }}{% else %}
-    {% static 'img/no_image.png' %}{% endif %}">
-    <h1>{{ offer.name }}</h1>
+    {% static 'images/no-image.png' %}{% endif %}">
+    <h1>{{ offer.title }}</h1>
     <h2>
-        <a href="{{ product.category.get_absolute_url }}">
+        <a href="{{ offer.category.get_absolute_url }}">
             {{ offer.category }}
         </a>
     </h2>

@@ -22,12 +22,12 @@
         </ul>
     </div>
     <div id="main" class="product-list">
-        <h1><h1>{% if category %}{{ category.name }}{% else %}Offers{% endif %}</h1>
+        <h1 style="margin-left: 25px">{% if category %}{{ category.name }}{% else %}Offers{% endif %}</h1>
           {% for offer in offers %}
             <div class="item">
                 <a href="{{ offer.get_absolute_url }}">
                     <img src="{% if offer.image %}{{ offer.image.url }}
-                    {%else %}{% static 'images/no_image.png' %}{% endif %}">
+                    {%else %}{% static 'images/no-image.png' %}{% endif %}">
                 </a>
                 <a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a>
                 <br>

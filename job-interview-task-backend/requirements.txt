@@ -3,5 +3,3 @@ django-decouple==2.1
 Pillow = 8.4.0
 djangorestframework = 3.12.4
 django-cors-headers = 3.10.0
-django-filter = 21.1
-djangorestframework-filters = 0.11.1
