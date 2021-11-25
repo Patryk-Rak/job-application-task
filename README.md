@@ -57,9 +57,9 @@ Angular Version of frontend.
 - http://127.0.0.1:8000/<category_name> - main page, but with filtered offers by category in slug
 - http://127.0.0.1:8000/admin - Django Administration site
 - http://127.0.0.1:8000/api/offers - Listed offers in REST Api Framework
-- http://127.0.0.1:8000/api/offers/<id> - Picked one offer by ID. It also contains forms for CRUD
+- http://127.0.0.1:8000/api/offers/(id) - Picked one offer by ID. It also contains forms for CRUD
 - http://127.0.0.1:8000/api/categories - Listed categories in REST Api Framework
-- http://127.0.0.1:8000/api/categories/<id> - Picked one category by ID. It also contains forms for CRUD
+- http://127.0.0.1:8000/api/categories/(id) - Picked one category by ID. It also contains forms for CRUD
 
 2. Backend Server
 
