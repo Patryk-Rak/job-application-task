@@ -3,36 +3,14 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
-def MaxLengthValidator(limit_value, message=None):
-    if limit_value > 200:
-        raise ValidationError(
-            _(f'{limit_value} this year is not supported, it must be greater than 2000'),
-            params={'value': limit_value},
-        )
-
-
-def validate_car_engine_power(value):
+# Example of simple validator
+def price_validator(value):
     if value <= 0:
         raise ValidationError(
-            _(f'{value} is too small, it must be greater than 0'),
+            _(f'{value} Price is too small, put number more than 0'),
             params={'value': value},
         )
 
-
-def daily_rental_cost(value):
-    if value <= 0:
-        raise ValidationError(
-            _(f'{value} is too small, it must be greater than 0'),
-            params={'value': value},
-        )
-
-
-def validate_num_of_passengers(value):
-    if value > 4:
-        raise ValidationError(
-            _(f'{value} is too much passengers, it must be less than 5'),
-            params={'value': value},
-        )
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -59,7 +37,7 @@ class Offer(models.Model):
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='offers/%Y/%m/%d',
                               blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2, validators=[price_validator])
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
